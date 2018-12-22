@@ -26,11 +26,9 @@ target 'example' do
 	# use_frameworks!
 
 	# Pods for example
-    
+
 
   pod 'react-native-ccs-kakaosdk', :path => '../node_modules/react-native-ccs-kakaosdk'
-
-  pod 'react-native-fast-image', :path => '../node_modules/react-native-fast-image'
 
 end
 
