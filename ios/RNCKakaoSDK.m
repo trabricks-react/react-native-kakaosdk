@@ -1,8 +1,8 @@
 
-#import "RNCcsKakaosdk.h"
+#import "RNCKakaoSDK.h"
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 
-@implementation RNCcsKakaosdk
+@implementation RNCKakaoSDK
 
 - (dispatch_queue_t)methodQueue
 {

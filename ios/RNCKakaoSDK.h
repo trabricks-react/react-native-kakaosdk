@@ -5,7 +5,7 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNCcsKakaosdk : NSObject <RCTBridgeModule>
+@interface RNCKakaoSDK : NSObject <RCTBridgeModule>
 
 @end
   
