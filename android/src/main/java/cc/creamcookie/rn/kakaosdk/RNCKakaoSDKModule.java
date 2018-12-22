@@ -118,7 +118,7 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
 
             JSONObject o = new JSONObject();
             o.put("accessToken", token.getAccessToken());
-            o.put("remainingExpireTime", token.getRemainingExpireTime());
+            o.put("remainingExpireTime", token.getRemainingExpireTime() / 1000.0f);
 
             promise.resolve(o.toString());
         }

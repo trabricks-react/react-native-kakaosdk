@@ -19,8 +19,10 @@ RCT_EXPORT_MODULE()
 {
     if ([self isLogin]) {
         KOToken * token = [KOSession sharedSession].token;
+        
+        NSNumber * time = [NSNumber numberWithDouble: token.remainingExpireTime];
         NSDictionary * result = @{ @"accessToken": token.accessToken,
-                                   @"remainingExpireTime" : token.remainingExpireTime,
+                                   @"remainingExpireTime" : time,
                                    @"scopes" : token.scopes
                                    };
         
