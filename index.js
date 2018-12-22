@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNCcsKakaosdk } = NativeModules;
+const { RNCKakaoSDK } = NativeModules;
 
-export default RNCcsKakaosdk;
+export default RNCKakaoSDK;

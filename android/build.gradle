@@ -33,6 +33,6 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile group: 'com.kakao.sdk', name: 'usermgmt', version: 1.15.1
+    compile 'com.kakao.sdk:usermgmt:1.15.1'
 }
   
