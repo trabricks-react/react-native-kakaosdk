@@ -3,6 +3,7 @@ package cc.creamcookie.rn.kakaosdk;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Promise;
@@ -19,15 +20,23 @@ import com.kakao.util.exception.KakaoException;
 import org.json.JSONObject;
 
 import cc.creamcookie.rn.kakaosdk.impl.KakaoSDKAdapter;
+import cc.creamcookie.rn.kakaosdk.impl.LoginButton;
 
 public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements ActivityEventListener {
 
     private ReactApplicationContext reactContext;
     private KakaoSDKAdapter kakaoSDKAdapter;
+    private LoginButton loginButton;
 
     public RNCKakaoSDKModule(ReactApplicationContext reactContext) {
         super(reactContext);
+
         this.reactContext = reactContext;
+        this.reactContext.addActivityEventListener(this);
+
+        this.loginButton = new LoginButton(this.reactContext);
+
+        initKakaoSDK();
     }
 
     @Override
@@ -37,6 +46,7 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
 
     @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+        Log.d(getName(), "onActivityResult");
         if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
             return;
         }
@@ -49,11 +59,13 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
 
     public void initKakaoSDK() {
         if (kakaoSDKAdapter == null) {
-            kakaoSDKAdapter = new KakaoSDKAdapter(reactContext, AuthType.KAKAO_LOGIN_ALL);
+            kakaoSDKAdapter = new KakaoSDKAdapter(reactContext);
             try {
                 KakaoSDK.init(kakaoSDKAdapter);
             }
-            catch(Exception ex) { }
+            catch(Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
@@ -63,16 +75,15 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
         try {
             this.initKakaoSDK();
 
-            Session.getCurrentSession().close();
-
-            AuthType authType = AuthType.KAKAO_LOGIN_ALL;
-            kakaoSDKAdapter.setAuthType(authType);
+            if (!Session.getCurrentSession().isClosed()) {
+                Session.getCurrentSession().close();
+            }
 
             Session.getCurrentSession().clearCallbacks();
-            Session.getCurrentSession().addCallback(new SessionCallback(promise));
-            Session.getCurrentSession().open(authType, reactContext.getCurrentActivity());
+            loginButton.open(AuthType.KAKAO_LOGIN_ALL, new SessionCallback(promise));
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             promise.reject(ex);
         }
     }
@@ -83,10 +94,15 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
 
         try {
             this.initKakaoSDK();
-            Session.getCurrentSession().close();
+
+            if (!Session.getCurrentSession().isClosed()) {
+                Session.getCurrentSession().close();
+            }
+
             promise.resolve("SUCCESS");
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             promise.reject(ex);
         }
     }
@@ -107,6 +123,7 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
             promise.resolve(o.toString());
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             promise.reject(ex);
         }
 
@@ -121,18 +138,19 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
 
         @Override
         public void onSessionOpened() {
+            Log.d(getName(), "SessionCallback.onSessionOpened");
             if (this.promise != null) {
                 getAccessToken(this.promise);
-                Session.getCurrentSession().removeCallback(this);
                 this.promise = null;
             }
         }
 
         @Override
         public void onSessionOpenFailed(KakaoException exception) {
+            Log.d(getName(), "SessionCallback.onSessionOpenFailed");
+            exception.printStackTrace();
             if (this.promise != null) {
                 this.promise.reject(exception);
-                Session.getCurrentSession().removeCallback(this);
                 this.promise = null;
             }
         }

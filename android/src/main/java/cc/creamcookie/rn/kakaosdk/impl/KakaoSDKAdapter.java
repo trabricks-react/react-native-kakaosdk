@@ -13,15 +13,9 @@ import com.kakao.auth.KakaoAdapter;
 public class KakaoSDKAdapter extends KakaoAdapter {
 
     private Context context;
-    private AuthType authType;
 
-    public KakaoSDKAdapter(ReactApplicationContext context, AuthType authType) {
+    public KakaoSDKAdapter(ReactApplicationContext context) {
         this.context = context.getApplicationContext();
-        this.authType = authType;
-    }
-
-    public void setAuthType(AuthType authType) {
-        this.authType = authType;
     }
 
     /**
@@ -35,7 +29,7 @@ public class KakaoSDKAdapter extends KakaoAdapter {
         return new ISessionConfig() {
             @Override
             public AuthType[] getAuthTypes() {
-                return new AuthType[] { authType };
+                return new AuthType[] { AuthType.KAKAO_TALK, AuthType.KAKAO_STORY, AuthType.KAKAO_ACCOUNT, AuthType.KAKAO_LOGIN_ALL };
             }
 
             @Override
