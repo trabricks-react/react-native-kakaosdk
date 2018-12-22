@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source        = { :git => "https://github.com/creamcookie/react-native-ccs-kakaosdk.git" }
-  s.source_files  = "ios/*.{h,m}"
+  s.source_files  = "ios/*.h", "ios/*.m"
 
   s.dependency "React"
   s.dependency "KakaoOpenSDK"
