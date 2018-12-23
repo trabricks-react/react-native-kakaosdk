@@ -6,18 +6,18 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.facebook.react.bridge.ActivityEventListener;
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
 import com.kakao.auth.AuthType;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.KakaoSDK;
 import com.kakao.auth.Session;
 import com.kakao.auth.authorization.accesstoken.AccessToken;
 import com.kakao.util.exception.KakaoException;
-
-import org.json.JSONObject;
 
 import cc.creamcookie.rn.kakaosdk.impl.KakaoSDKAdapter;
 import cc.creamcookie.rn.kakaosdk.impl.LoginButton;
@@ -116,11 +116,11 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
 
             if (token.getAccessToken() == null) throw new Exception("Required login..");
 
-            JSONObject o = new JSONObject();
-            o.put("accessToken", token.getAccessToken());
-            o.put("remainingExpireTime", token.getRemainingExpireTime() / 1000.0f);
+            WritableMap map = Arguments.createMap();
+            map.putString("accessToken", token.getAccessToken());
+            map.putDouble("remainingExpireTime", token.getRemainingExpireTime() / 1000.0f);
 
-            promise.resolve(o.toString());
+            promise.resolve(map);
         }
         catch (Exception ex) {
             ex.printStackTrace();
