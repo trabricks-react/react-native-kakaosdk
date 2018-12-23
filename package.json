@@ -15,11 +15,5 @@
   "peerDependencies": {
     "react-native": "*"
 
-  },
-
-  "rnpm": {
-    "ios": {
-      "project": "ios/RNCcsKakaosdk.xcodeproj"
-    }
   }
 }
