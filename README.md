@@ -4,9 +4,9 @@
 ![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
 [![npm](https://img.shields.io/npm/v/react-native-ccs-kakaosdk.svg?style=flat-square)](https://www.npmjs.com/package/react-native-ccs-kakaosdk)
 [![npm](https://img.shields.io/npm/dm/react-native-ccs-kakaosdk.svg?style=flat-square&colorB=007ec6)](https://www.npmjs.com/package/react-native-ccs-kakaosdk)
-[![github issues](https://img.shields.io/github/issues/creamcookie/react-native-ccs-kakaosdk.svg?style=flat-square)](https://github.com/creamcookie/react-native-ccs-kakaosdk/issues)
-[![github closed issues](https://img.shields.io/github/issues-closed/creamcookie/react-native-ccs-kakaosdk.svg?style=flat-square&colorB=44cc11)](https://github.com/creamcookie/react-native-ccs-kakaosdk/issues?q=is%3Aissue+is%3Aclosed)
-[![Issue Stats](https://img.shields.io/issuestats/i/github/creamcookie/react-native-ccs-kakaosdk.svg?style=flat-square&colorB=44cc11)](http://github.com/creamcookie/react-native-ccs-kakaosdk/issues)
+[![github issues](https://img.shields.io/github/issues/creamcookie/react-native-kakaosdk.svg?style=flat-square)](https://github.com/creamcookie/react-native-kakaosdk/issues)
+[![github closed issues](https://img.shields.io/github/issues-closed/creamcookie/react-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](https://github.com/creamcookie/react-native-kakaosdk/issues?q=is%3Aissue+is%3Aclosed)
+[![Issue Stats](https://img.shields.io/issuestats/i/github/creamcookie/react-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](http://github.com/creamcookie/react-native-kakaosdk/issues)
 
 
 ## Getting started
