@@ -20,7 +20,14 @@
 ### Manual installation
 
 
-#### iOS
+#### iOS (without CocoaPod)
+
+1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
+2. Go to `node_modules` ➜ `react-native-ccs-kakaosdk` and add `RNCcsKakaosdk.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libRNCcsKakaosdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+4. Run your project (`Cmd+R`)<
+
+#### iOS (with CocoaPod)
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `react-native-ccs-kakaosdk` and add `RNCcsKakaosdk.xcodeproj`
