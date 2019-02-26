@@ -34,9 +34,8 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
         this.reactContext = reactContext;
         this.reactContext.addActivityEventListener(this);
 
-        this.loginButton = new LoginButton(this.reactContext);
-
         initKakaoSDK();
+        this.loginButton = new LoginButton(this.reactContext);
     }
 
     @Override
@@ -47,8 +46,12 @@ public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements Act
     @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         Log.d(getName(), "onActivityResult");
-        if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
-            return;
+        try {
+            if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+                return;
+            }
+        }
+        catch(Exception ex) {
         }
     }
 
