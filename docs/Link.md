@@ -8,8 +8,8 @@
 ## Guide Index
 - [`피드 템플릿 보내기`](Link.md#피드-템플릿-보내기)
 - [`리스트 템플릿 보내기`](Link.md#리스트-템플릿-보내기)
-- 위치 템플릿 보내기
-- 커머스 템플릿 보내기
+- [`위치 템플릿 보내기`](Link.md#위치-템플릿-보내기)
+- [`커머스 템플릿 보내기`](Link.md#커머스-템플릿-보내기)
 - 텍스트 템플릿 보내기
 - 스크랩 템플릿 보내기
 
@@ -199,14 +199,128 @@ KakaoSDK.link.sendList({
     title: '자전거 라이더를 위한 공간',
     desc: '매거진',
     imageURL: 'http://mud-kage.kakao.co.kr/dn/QNvGY/btqfD0SKT9m/k4KUlb1m0dKPHxGV8WbIK1/openlink_640x640s.jpg',
+    link: {
+      webURL: 'https://developers.kakao.com',
+      mobileWebURL: 'https://developers.kakao.com',
+    },
   }, {
     title: '비쥬얼이 끝내주는 오레오 카푸치노',
     desc: '매거진',
     imageURL: 'http://mud-kage.kakao.co.kr/dn/boVWEm/btqfFGlOpJB/mKsq9z6U2Xpms3NztZgiD1/openlink_640x640s.jpg',
+    link: {
+      webURL: 'https://developers.kakao.com',
+      mobileWebURL: 'https://developers.kakao.com',
+    },
   }, {
     title: '감성이 가득한 분위기',
     desc: '매거진',
     imageURL: 'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+    link: {
+      webURL: 'https://developers.kakao.com',
+      mobileWebURL: 'https://developers.kakao.com',
+    },
+  }],
+});
+```
+
+
+### `위치 템플릿 보내기`
+
+```
+1. 이미지 영역: 최대 1장, 최소 200px * 200px이상, 2MB이하
+2. 제목/설명 영역: 최대 4줄 표시 (제목, 설명 각각 2줄 표시)
+3. 소셜 영역: 최대 3개 표시 (순서: 좋아요 > 댓글 > 공유 > 조회 > 구독)
+4. 버튼 영역: 최대 2개 표시, 버튼명 8자 이하 권장
+```
+
+<img alt="screenshot of LocationTemplate" src="https://developers.kakao.com/assets/images/dashboard/default_location_spec.png" />
+
+위치 템플릿은 지도 표시에 사용되는 주소 정보와 해당 위치를 설명할 수 있는 콘텐츠 오브젝트로 구성됩니다. 왼쪽 하단에 기본 버튼, 오른쪽 하단에 지도를 보여주기 위한 "위치 보기" 버튼이 추가됩니다. "위치 보기" 버튼을 클릭하면 카카오톡 채팅방 내에서 바로 지도 화면으로 전환하여 해당 주소의 위치를 확인할 수 있습니다
+
+
+|이름|설명|타입|필수|
+|-|-|-|-|
+|content|위치에 대해 설명하는 콘텐츠 정보|[`ContentObject`](Link.md#Content-오브젝트)|O|
+|address|공유할 위치의 주소 예) 경기 성남시 분당구 판교역로 235|string|O|
+|addressTitle|카카오톡 내의 지도 뷰에서 사용되는 타이틀 예) 카카오판교오피스|string|X|
+|social|메인 콘텐츠의 부가 소셜 정보|[`SocialObject`](Link.md#Social-오브젝트)|X|
+|buttonTitle|기본 버튼 타이틀("자세히 보기")을 변경하고 싶을 때 설정|string|X|
+|buttons|버튼 목록. 기본 버튼의 타이틀 외에 링크도 변경하고 싶을 때 설정. (최대 1개, 오른쪽 "위치 보기" 버튼은 고정)|[`ButtonObject`](Link.md#Button-오브젝트)|X|
+
+
+```js
+import KakaoSDK from 'actbase-native-kakaosdk';
+
+...
+
+KakaoSDK.link.sendLocation({
+  address: '성남시 분당구 판교역로 235',
+  addressTitle: '카카오 판교오피스',
+  content: {
+    title: '카카오 판교오피스',
+    desc: '카카오 판교오피스 위치입니다.',
+    imageURL: 'http://www.kakaocorp.com/images/logo/og_daumkakao_151001.png',
+    link: {
+      webURL: 'https://developers.kakao.com',
+      mobileWebURL: 'https://developers.kakao.com',
+    },
+  },
+});
+```
+
+
+### `커머스 템플릿 보내기`
+
+```
+1. 이미지 영역: 최대 1장, 최소 200px * 200px이상, 2MB이하
+2. 할인된 가격 영역
+3. 정상가격 영역
+4. 할인율 영역
+5. 제품명 영역: 최대 2줄 표시
+6. 버튼 영역: 최대 2개 표시, 버튼명 8자 이하 권장
+```
+
+<img alt="screenshot of CommerceTemplate" src="https://developers.kakao.com/assets/images/dashboard/default_commerce_spec.png" />
+
+기본 템플릿으로 제공되는 커머스 템플릿은 하나의 콘텐츠, 커머스 상세와 하나의 기본 버튼을 가집니다. 추가로 임의의 버튼을 설정할 수도 있습니다.
+
+|이름|설명|타입|필수|
+|-|-|-|-|
+|content|메시지의 메인 콘텐츠 정보|[`ContentObject`](Link.md#Content-오브젝트)|O|
+|commerce|상품에 대한 가격 정보|[`CommerceDetailObject`](Link.md#CommerceDetail-오브젝트)|O|
+|buttonTitle|기본 버튼 타이틀("자세히 보기")을 변경하고 싶을 때 설정|string|X|
+|buttons|버튼 목록. 버튼 타이틀과 링크를 변경하고 싶을때, 버튼 두개를 사용하고 싶을때 사용.(최대 2개)|[`ButtonObject[]`](Link.md#Button-오브젝트)|X|
+
+
+```js
+import KakaoSDK from 'actbase-native-kakaosdk';
+
+...
+
+KakaoSDK.link.sendCommerce({
+  contents: {
+    title: 'Ivory long dress (4 Color)',
+    imageURL: 'http://mud-kage.kakao.co.kr/dn/RY8ZN/btqgOGzITp3/uCM1x2xu7GNfr7NS9QvEs0/kakaolink40_original.png',
+    link: {
+      webURL: 'https://developers.kakao.com',
+      mobileWebURL: 'https://developers.kakao.com',
+    },
+  },
+  commerce: {
+    regularPrice: 208800,
+    discountPrice: 146160,
+    discountRate: 30,
+  },
+  buttons: [{
+    title: '구매하기',
+    webURL: 'https://style.kakao.com/main/women/contentId=100/buy',
+    mobileWebURL: 'https://m.style.kakao.com/main/women/contentId=100/buy',
+  }, {
+    title: '앱에서 보기',
+    webURL: 'https://style.kakao.com/main/women/contentId=100/share',
+    mobileWebURL: 'https://m.style.kakao.com/main/women/contentId=100/share',
+    androidExecutionParams: 'contentId=100&share=true',
+    iosExecutionParams: 'contentId=100&share=true',
   }],
 });
 ```
