@@ -38,9 +38,9 @@
 
 [<img src="https://developers.kakao.com/assets/images/dashboard/default_feed.png">](docs/Link.md#피드-템플릿-보내기)
 [<img src="https://developers.kakao.com/assets/images/dashboard/default_list.png">](docs/Link.md#리스트-템플릿-보내기)
-[<img src="https://developers.kakao.com/assets/images/dashboard/default_commerce.png">](docs/Link.md#커머스 템플릿 보내기)
+[<img src="https://developers.kakao.com/assets/images/dashboard/default_commerce.png">](docs/Link.md#커머스-템플릿-보내기)
 [<img src="https://developers.kakao.com/assets/images/dashboard/default_location.png">](docs/Link.md#위치-템플릿-보내기)
-[<img src="https://developers.kakao.com/assets/images/dashboard/default_scrap.png">](docs/Link.md#스크랩 템플릿 보내기)
+[<img src="https://developers.kakao.com/assets/images/dashboard/default_scrap.png">](docs/Link.md#스크랩-템플릿-보내기)
 
 
   
