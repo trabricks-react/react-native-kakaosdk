@@ -1,4 +1,4 @@
-package cc.creamcookie.rn.kakaosdk.impl;
+package io.actbase.kakaosdk.impl;
 /*
   Copyright 2014-2017 Kakao Corp.
 

@@ -22,13 +22,13 @@ import com.kakao.util.exception.KakaoException;
 import io.actbase.kakaosdk.impl.KakaoSDKAdapter;
 import io.actbase.kakaosdk.impl.LoginButton;
 
-public class ANKakaoSDKModule extends ReactContextBaseJavaModule implements ActivityEventListener {
+public class ANKakaoLogin extends ReactContextBaseJavaModule implements ActivityEventListener {
 
     private ReactApplicationContext reactContext;
     private KakaoSDKAdapter kakaoSDKAdapter;
     private LoginButton loginButton;
 
-    public RNCKakaoSDKModule(ReactApplicationContext reactContext) {
+    public ANKakaoLogin(ReactApplicationContext reactContext) {
         super(reactContext);
 
         this.reactContext = reactContext;
@@ -40,7 +40,7 @@ public class ANKakaoSDKModule extends ReactContextBaseJavaModule implements Acti
 
     @Override
     public String getName() {
-    return "RNCKakaoSDK";
+        return "RNCKakaoSDK";
     }
 
     @Override
