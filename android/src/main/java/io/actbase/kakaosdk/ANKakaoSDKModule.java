@@ -1,5 +1,5 @@
 
-package cc.creamcookie.rn.kakaosdk;
+package io.actbase.kakaosdk;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,10 +19,10 @@ import com.kakao.auth.Session;
 import com.kakao.auth.authorization.accesstoken.AccessToken;
 import com.kakao.util.exception.KakaoException;
 
-import cc.creamcookie.rn.kakaosdk.impl.KakaoSDKAdapter;
-import cc.creamcookie.rn.kakaosdk.impl.LoginButton;
+import io.actbase.kakaosdk.impl.KakaoSDKAdapter;
+import io.actbase.kakaosdk.impl.LoginButton;
 
-public class RNCKakaoSDKModule extends ReactContextBaseJavaModule implements ActivityEventListener {
+public class ANKakaoSDKModule extends ReactContextBaseJavaModule implements ActivityEventListener {
 
     private ReactApplicationContext reactContext;
     private KakaoSDKAdapter kakaoSDKAdapter;

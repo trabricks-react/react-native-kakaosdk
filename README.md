@@ -8,6 +8,13 @@
 [![github closed issues](https://img.shields.io/github/issues-closed/actbase/actbase-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](https://github.com/actbase/actbase-native-kakaosdk/issues?q=is%3Aissue+is%3Aclosed)
 [![Issue Stats](https://img.shields.io/issuestats/i/github/actbase/actbase-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](http://github.com/actbase/actbase-native-kakaosdk/issues)
 
+## 기능
+- 카카오 사용자관리
+- 카카오링크
+- 카카오톡
+- 카카오스토리
+- 카카오톡 채널
+
 
 ## Getting started
 

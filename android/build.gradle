@@ -32,7 +32,10 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
-    compile 'com.kakao.sdk:usermgmt:1.15.1'
+    implementation 'com.facebook.react:react-native:+'
+    implementation 'com.kakao.sdk:usermgmt:1.25.0'
+    implementation 'com.kakao.sdk:kakaolink:1.25.0'
+    implementation 'com.kakao.sdk:kakaotalk:1.25.0'
+    implementation 'com.kakao.sdk:kakaostory:1.25.0'
 }
   
