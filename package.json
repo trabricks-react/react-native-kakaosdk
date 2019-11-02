@@ -1,19 +1,21 @@
 
 {
-  "name": "react-native-ccs-kakaosdk",
-  "version": "1.0.4",
+  "name": "actbase-native-kakaosdk",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "kakaosdk",
+    "kakao login",
+    "카카오로그인"
   ],
-  "author": "",
-  "license": "",
+  "author": "Actbase",
+  "license": "MIT",
   "peerDependencies": {
     "react-native": "*"
-
   }
 }
