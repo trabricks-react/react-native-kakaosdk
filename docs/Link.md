@@ -10,8 +10,8 @@
 - [`리스트 템플릿 보내기`](Link.md#리스트-템플릿-보내기)
 - [`위치 템플릿 보내기`](Link.md#위치-템플릿-보내기)
 - [`커머스 템플릿 보내기`](Link.md#커머스-템플릿-보내기)
-- 텍스트 템플릿 보내기
-- 스크랩 템플릿 보내기
+- [`텍스트 템플릿 보내기`](Link.md#텍스트-템플릿-보내기)
+- [`스크랩 템플릿 보내기`](Link.md#스크랩-템플릿-보내기)
 
 
 ## 사용방법
@@ -143,7 +143,9 @@ KakaoSDK.link.sendFeed({
     androidExecutionParams: 'key1=value1',
     iosExecutionParams: 'key1=value1',
   }],
-});
+})
+.then(r => console.log('success'))
+.catch(e => console.log(e));
 ```
 
 
@@ -265,7 +267,9 @@ KakaoSDK.link.sendLocation({
       mobileWebURL: 'https://developers.kakao.com',
     },
   },
-});
+})
+.then(r => console.log('success'))
+.catch(e => console.log(e));
 ```
 
 
@@ -324,3 +328,62 @@ KakaoSDK.link.sendCommerce({
   }],
 });
 ```
+
+
+### `텍스트 템플릿 보내기`
+
+|이름|설명|타입|필수|
+|-|-|-|-|
+|text|최대 200자의 텍스트 정보|string|O|
+|link|해당 컨텐츠 클릭 시 이동 할 링크 정보|[`LinkObject`](Link.md#Link-오브젝트)|O|
+|buttonTitle|기본 버튼 타이틀("자세히 보기")을 변경하고 싶을 때 설정|string|X|
+|buttons|메시지 하단에 추가되는 버튼 목록. 버튼 타이틀과 링크를 변경하고 싶을때, 버튼 두개를 사용하고 싶을때 사용. 최대 2개|[`ButtonObject[]`](Link.md#Button-오브젝트)|X|
+
+```js
+import KakaoSDK from 'actbase-native-kakaosdk';
+
+...
+
+KakaoSDK.link.sendText({
+  text: 'Text',
+  link: {
+    webURL: 'https://developers.kakao.com',
+    mobileWebURL: 'https://developers.kakao.com',
+  },
+  buttonTitle: 'This is button',
+})
+.then(r => console.log('success'))
+.catch(e => console.log(e));
+```
+
+
+
+
+### `스크랩 템플릿 보내기`
+
+```
+1. 이미지 영역: 최대 1장, 최소 200px * 200px이상, 2MB이하
+2. 제목/설명 영역: 최대 4줄 표시 (제목, 설명 각각 2줄 표시)
+3. 버튼 영역: 최대 1개 표시, 버튼명 8자 이하 권장
+4. A. og:image / B. video:duration, music:duration / C. og:title, og:description / D. og:site_name
+```
+
+<img alt="screenshot of ScrapTeamplte" src="https://developers.kakao.com/assets/images/dashboard/default_scrap_spec.png" />
+
+웹 사이트 콘텐츠를 해당 웹 페이지의 Open Graph 정보를 바탕으로 이미지, 제목, 설명, 링크를 구성하여 별도의 템플릿 생성 작업 없이 URL만으로 간편하게 전달합니다.
+```
+스크랩하려는 웹 사이트의 도메인은 반드시 내 애플리케이션 설정에 등록되어야 합니다.
+도메인은 개발자 웹사이트의 [내 애플리케이션] - 앱 선택 - [설정] - [일반] 메뉴에서 등록할 수 있습니다.
+```
+
+```js
+import KakaoSDK from 'actbase-native-kakaosdk';
+
+...
+
+KakaoSDK.link.sendURL('https://developers.kakao.com')
+.then(r => console.log('success'))
+.catch(e => console.log(e));
+```
+
+
