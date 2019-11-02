@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA363C3021CE1706002F486A /* RNCKakaoSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = BA363C2F21CE1706002F486A /* RNCKakaoSDK.m */; };
+		BA1009B9236DF1F100B3EB23 /* ANKakaoLink.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1009B8236DF1F100B3EB23 /* ANKakaoLink.m */; };
+		BA363C3021CE1706002F486A /* ANKakaoLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA363C2F21CE1706002F486A /* ANKakaoLogin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libRNCKakaoSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCcsKakaosdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA363C2E21CE1706002F486A /* RNCKakaoSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCKakaoSDK.h; sourceTree = "<group>"; };
-		BA363C2F21CE1706002F486A /* RNCKakaoSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCKakaoSDK.m; sourceTree = "<group>"; };
+		134814201AA4EA6300B7C361 /* libRNCcsKakaosdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRNCcsKakaosdk.a; path = libRNCKakaoSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1009B7236DF1F100B3EB23 /* ANKakaoLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKakaoLink.h; sourceTree = "<group>"; };
+		BA1009B8236DF1F100B3EB23 /* ANKakaoLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKakaoLink.m; sourceTree = "<group>"; };
+		BA363C2E21CE1706002F486A /* ANKakaoLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANKakaoLogin.h; sourceTree = "<group>"; };
+		BA363C2F21CE1706002F486A /* ANKakaoLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANKakaoLogin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +45,7 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libRNCKakaoSDK.a */,
+				134814201AA4EA6300B7C361 /* libRNCcsKakaosdk.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,8 +53,10 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				BA363C2E21CE1706002F486A /* RNCKakaoSDK.h */,
-				BA363C2F21CE1706002F486A /* RNCKakaoSDK.m */,
+				BA1009B7236DF1F100B3EB23 /* ANKakaoLink.h */,
+				BA1009B8236DF1F100B3EB23 /* ANKakaoLink.m */,
+				BA363C2E21CE1706002F486A /* ANKakaoLogin.h */,
+				BA363C2F21CE1706002F486A /* ANKakaoLogin.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +78,7 @@
 			);
 			name = RNCKakaoSDK;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libRNCKakaoSDK.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libRNCcsKakaosdk.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -95,6 +100,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -112,7 +118,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA363C3021CE1706002F486A /* RNCKakaoSDK.m in Sources */,
+				BA1009B9236DF1F100B3EB23 /* ANKakaoLink.m in Sources */,
+				BA363C3021CE1706002F486A /* ANKakaoLogin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

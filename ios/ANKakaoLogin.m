@@ -1,14 +1,15 @@
 
-#import "RNCKakaoSDK.h"
+#import "ANKakaoLogin.h"
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 
-@implementation RNCKakaoSDK
+@implementation ANKakaoLogin
 
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
 }
-RCT_EXPORT_MODULE()
+
+RCT_EXPORT_MODULE(ANKakaoLogin)
 
 - (BOOL)isLogin
 {
