@@ -10,7 +10,7 @@
 
 ## 기능
 - [`카카오 사용자관리`]()
-- [`카카오링크`](README.md#카카오링크)
+- [`카카오링크`](#카카오링크)
 - 카카오톡
 - 카카오스토리
 - 카카오톡 채널
@@ -143,11 +143,11 @@ Kakao SDK에포함된 kakao-open-android-sdk-sample에서 제공되는 SampleLog
 
 자세히 보고 싶은 메시지를 클릭하세요.
 
-[<img src="https://developers.kakao.com/assets/images/dashboard/default_feed.png">](docs/Link.md#피드-템플릿-보내기)
-[<img src="https://developers.kakao.com/assets/images/dashboard/default_list.png">](docs/Link.md#리스트-템플릿-보내기)
-[<img src="https://developers.kakao.com/assets/images/dashboard/default_commerce.png">](docs/Link.md#커머스-템플릿-보내기)
-[<img src="https://developers.kakao.com/assets/images/dashboard/default_location.png">](docs/Link.md#위치-템플릿-보내기)
-[<img src="https://developers.kakao.com/assets/images/dashboard/default_scrap.png">](docs/Link.md#스크랩-템플릿-보내기)
+[<img src="https://developers.kakao.com/assets/images/dashboard/default_feed.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#피드-템플릿-보내기)
+[<img src="https://developers.kakao.com/assets/images/dashboard/default_list.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#리스트-템플릿-보내기)
+[<img src="https://developers.kakao.com/assets/images/dashboard/default_commerce.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#커머스-템플릿-보내기)
+[<img src="https://developers.kakao.com/assets/images/dashboard/default_location.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#위치-템플릿-보내기)
+[<img src="https://developers.kakao.com/assets/images/dashboard/default_scrap.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#스크랩-템플릿-보내기)
 
 
   
