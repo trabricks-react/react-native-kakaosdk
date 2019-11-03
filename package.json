@@ -1,9 +1,10 @@
 
 {
   "name": "actbase-native-kakaosdk",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,11 +12,22 @@
     "react-native",
     "kakaosdk",
     "kakao login",
-    "카카오로그인"
+    "카카오로그인",
+    "kakaolink",
+    "카카오링크",
+    "kakao link"
   ],
-  "author": "Actbase",
   "license": "MIT",
   "peerDependencies": {
     "react-native": "*"
+  },
+  "author": {
+    "name": "Trabricks LLC",
+    "email": "project@trabricks.io",
+    "url": "https://trabricks.io"
+  },
+  "homepage": "https://github.com/actbase/actbase-native-kakaosdk#readme",
+  "bugs": {
+    "url": "https://github.com/actbase/actbase-native-kakaosdk/issues"
   }
 }
