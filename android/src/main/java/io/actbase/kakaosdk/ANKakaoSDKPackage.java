@@ -16,7 +16,8 @@ public class ANKakaoSDKPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
                 new ANKakaoLogin(reactContext),
-                new ANKakaoLink(reactContext)
+                new ANKakaoLink(reactContext),
+                new ANKakaoChannel(reactContext)
         );
     }
 
