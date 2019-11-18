@@ -1,31 +1,41 @@
-import { NativeModules } from 'react-native';
+import { NativeModules } from "react-native";
 
 const { ANKakaoLogin, ANKakaoLink } = NativeModules;
 
 export const link = {
-  sendFeed: (object) => {
+  sendFeed: object => {
     ANKakaoLink.sendFeed(object);
   },
-  sendList: (object) => {
+  sendList: object => {
     ANKakaoLink.sendList(object);
   },
-  sendLocation: (object) => {
+  sendLocation: object => {
     ANKakaoLink.sendLocation(object);
   },
-  sendCommerce: (object) => {
+  sendCommerce: object => {
     ANKakaoLink.sendCommerce(object);
   },
-  sendText: (object) => {
+  sendText: object => {
     ANKakaoLink.sendText(object);
   },
-  sendURL: (object) => {
+  sendURL: object => {
     ANKakaoLink.sendURL(object);
-  },
+  }
 };
 
-export const login = {};
+export const login = {
+  getAccessToken: () => {
+    ANKakaoLogin.getAccessToken();
+  },
+  login: () => {
+    ANKakaoLogin.login();
+  },
+  logout: () => {
+    ANKakaoLogin.logout();
+  }
+};
 
 export default {
   link,
-  login,
+  login
 };
