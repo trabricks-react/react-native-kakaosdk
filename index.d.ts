@@ -72,18 +72,16 @@ declare module "actbase-native-kakaosdk" {
     buttons?: ButtonObject[];
   }
 
-  interface ResponseType {
-    key: string;
-    value: string;
-  }
-
   export interface AccessTokenType {
     accessToken: string;
     remainingExpireTime: number;
     scopes: string[];
   }
 
-  export type ANKakaoLinkResponseType = NativeSyntheticEvent<ResponseType>;
+  export interface ANKakaoLinkResponseType {
+    key: string;
+    value: string;
+  }
 
   export interface ANKakaoLink {
     sendFeed: (data: SendFeedParams) => Promise<ANKakaoLinkResponseType>;
