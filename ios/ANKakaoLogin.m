@@ -16,8 +16,7 @@ RCT_EXPORT_MODULE(ANKakaoLogin)
     return [[KOSession sharedSession] isOpen];
 }
 
-- (NSDictionary *)getAccessToken
-{
+- (NSDictionary *)getAccessToken {
     if ([self isLogin]) {
         KOToken * token = [KOSession sharedSession].token;
         
@@ -26,15 +25,12 @@ RCT_EXPORT_MODULE(ANKakaoLogin)
                                    @"remainingExpireTime" : time,
                                    @"scopes" : token.scopes
                                    };
-        
         return result;
     }
-    else {
-        return nil;
-    }
+    return nil;
 }
 
-RCT_REMAP_METHOD(getAccessToken,
+RCT_EXPORT_METHOD(getAccessToken,
                  accessTokenWithResolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
     @try {
         resolve([self getAccessToken]);
@@ -46,9 +42,8 @@ RCT_REMAP_METHOD(getAccessToken,
     }
 }
 
-RCT_REMAP_METHOD(login,
+RCT_EXPORT_METHOD(login,
                  loginWithResolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
-    
     [[KOSession sharedSession] close];
     [[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
         if (![[KOSession sharedSession] isOpen]) {
@@ -58,12 +53,10 @@ RCT_REMAP_METHOD(login,
             resolve([self getAccessToken]);
         }
      }];
-    
 }
 
-RCT_REMAP_METHOD(logout,
+RCT_EXPORT_METHOD(logout,
                  logoutWithResolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
-    
     [[KOSession sharedSession] close];
     [[KOSession sharedSession] logoutAndCloseWithCompletionHandler:^(BOOL success, NSError *error) {
         if (!success) {
@@ -73,7 +66,6 @@ RCT_REMAP_METHOD(logout,
             resolve(@"SUCCESS");
         }
     }];
-    
 }
 
 @end

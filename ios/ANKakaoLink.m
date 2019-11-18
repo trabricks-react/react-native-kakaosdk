@@ -79,7 +79,7 @@ RCT_EXPORT_MODULE(ANKakaoLink)
     }];
 }
 
-RCT_REMAP_METHOD(sendFeed,
+RCT_EXPORT_METHOD(sendFeed,
                  sendFeed: (NSDictionary *)dict resolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
     
     KMTTemplate *template = [KMTFeedTemplate feedTemplateWithBuilderBlock:^(KMTFeedTemplateBuilder * _Nonnull feedTemplateBuilder) {
@@ -95,7 +95,7 @@ RCT_REMAP_METHOD(sendFeed,
     [self sendWithTemplate:template resolver:resolve rejecter:reject];
 }
 
-RCT_REMAP_METHOD(sendList,
+RCT_EXPORT_METHOD(sendList,
                  sendList: (NSDictionary *)dict resolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
 
     KMTTemplate *template = [KMTListTemplate listTemplateWithBuilderBlock:^(KMTListTemplateBuilder * _Nonnull listTemplateBuilder) {
@@ -117,7 +117,7 @@ RCT_REMAP_METHOD(sendList,
     [self sendWithTemplate:template resolver:resolve rejecter:reject];
 }
 
-RCT_REMAP_METHOD(sendLocation,
+RCT_EXPORT_METHOD(sendLocation,
                  sendLocation: (NSDictionary *)dict resolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
 
     KMTTemplate *template = [KMTLocationTemplate locationTemplateWithBuilderBlock:^(KMTLocationTemplateBuilder * _Nonnull locationTemplateBuilder) {
@@ -133,7 +133,7 @@ RCT_REMAP_METHOD(sendLocation,
     [self sendWithTemplate:template resolver:resolve rejecter:reject];
 }
 
-RCT_REMAP_METHOD(sendCommerce,
+RCT_EXPORT_METHOD(sendCommerce,
                  sendCommerce: (NSDictionary *)dict resolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
 
     KMTTemplate *template = [KMTCommerceTemplate commerceTemplateWithBuilderBlock:^(KMTCommerceTemplateBuilder * _Nonnull commerceTemplateBuilder) {
@@ -147,7 +147,7 @@ RCT_REMAP_METHOD(sendCommerce,
     [self sendWithTemplate:template resolver:resolve rejecter:reject];
 }
 
-RCT_REMAP_METHOD(sendText,
+RCT_EXPORT_METHOD(sendText,
                  sendText: (NSDictionary *)dict resolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
 
     KMTTemplate *template = [KMTTextTemplate textTemplateWithBuilderBlock:^(KMTTextTemplateBuilder * _Nonnull textTemplateBuilder) {
@@ -163,7 +163,7 @@ RCT_REMAP_METHOD(sendText,
     [self sendWithTemplate:template resolver:resolve rejecter:reject];
 }
 
-RCT_REMAP_METHOD(sendURL,
+RCT_EXPORT_METHOD(sendURL,
                  sendURL: (NSString *)url resolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
     
     [[KLKTalkLinkCenter sharedCenter] sendScrapWithURL: [NSURL URLWithString: url] success:^(NSDictionary<NSString *,NSString *> * _Nullable warningMsg, NSDictionary<NSString *,NSString *> * _Nullable argumentMsg) {
