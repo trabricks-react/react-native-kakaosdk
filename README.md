@@ -13,7 +13,7 @@
 - [`카카오링크`](https://github.com/actbase/actbase-native-kakaosdk/blob/master/README.md#카카오링크)
 - 카카오톡
 - 카카오스토리
-- 카카오톡 채널
+- [`카카오톡 채널`]()
 
 ## Getting started
 
@@ -93,6 +93,8 @@ subprojects {
 
 project.KAKAO_SDK_VERSION 에는 sdk 버전을 명시합니다. gradle 지원은 1.0.36부터 지원되지만 최신 패키지 구조가 변경된 1.1.0버전 이상의 gradle project를 사용하시길 권장합니다.
 
+[app/build.grdle]
+
 ```gradle
 dependencies {
     implementation group: 'com.kakao.sdk', name: 'usermgmt', version: project.KAKAO_SDK_VERSION
@@ -101,7 +103,12 @@ dependencies {
     implementation group: 'com.kakao.sdk', name: 'kakaostory', version: project.KAKAO_SDK_VERSION
     implementation group: 'com.kakao.sdk', name: 'plusfriend', version: project.KAKAO_SDK_VERSION
 }
+```
 
+[gradle.properties]
+
+```properties
+KAKAO_SDK_VERSION=1.25.0
 ```
 
 3. 프로가드 적용시에는 아래 옵션을 설정에 추가합니다.
@@ -118,7 +125,7 @@ dependencies {
 
 Kakao SDK에포함된 kakao-open-android-sdk-sample에서 제공되는 SampleLoginActivity, SampleSignupActivity을 통해 로그인 기반 앱을 가볍게 만들어 볼 수 있습니다. 아래의 설정 예제를 참고하여, 생성하고자 하는 앱에 설정을 적용합니다.
 
-4. 다음과 같이 앱 설정을 합니다. [kakao_strings.xml]
+4. 다음과 같이 앱 설정을 합니다. [string.xml]
 
 앱생성시 발급된 네이티브 앱키를 kakao_app_key이란 이름으로 정의하고, AndroidManifest.xml에서 앱키를 등록합니다.
 
