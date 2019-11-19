@@ -34,7 +34,7 @@ RCT_EXPORT_MODULE(ANKakaoLogin)
     }
 }
 
-RCT_REMAP_METHOD(getAccessToken,
+RCT_EXPORT_METHOD(getAccessToken,
                  accessTokenWithResolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
     @try {
         resolve([self getAccessToken]);
@@ -46,7 +46,7 @@ RCT_REMAP_METHOD(getAccessToken,
     }
 }
 
-RCT_REMAP_METHOD(login,
+RCT_EXPORT_METHOD(login,
                  loginWithResolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
     
     [[KOSession sharedSession] close];
@@ -61,7 +61,7 @@ RCT_REMAP_METHOD(login,
     
 }
 
-RCT_REMAP_METHOD(logout,
+RCT_EXPORT_METHOD(logout,
                  logoutWithResolver: (RCTPromiseResolveBlock)resolve rejecter: (RCTPromiseRejectBlock)reject) {
     
     [[KOSession sharedSession] close];
