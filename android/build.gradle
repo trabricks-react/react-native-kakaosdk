@@ -39,10 +39,10 @@ repositories {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.kakao.sdk:usermgmt:1.25.0'
-    implementation 'com.kakao.sdk:kakaolink:1.25.0'
-    implementation 'com.kakao.sdk:kakaotalk:1.25.0'
-    implementation 'com.kakao.sdk:kakaostory:1.25.0'
-    implementation 'com.kakao.sdk:plusfriend:1.25.0'
+    implementation group: 'com.kakao.sdk', name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'kakaotalk', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'kakaostory', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'plusfriend', version: project.KAKAO_SDK_VERSION
 }
   
