@@ -125,7 +125,7 @@ KAKAO_SDK_VERSION=1.25.0
 
 Kakao SDK에포함된 kakao-open-android-sdk-sample에서 제공되는 SampleLoginActivity, SampleSignupActivity을 통해 로그인 기반 앱을 가볍게 만들어 볼 수 있습니다. 아래의 설정 예제를 참고하여, 생성하고자 하는 앱에 설정을 적용합니다.
 
-4. 다음과 같이 앱 설정을 합니다. [string.xml]
+4. 다음과 같이 앱 설정을 합니다. [strings.xml]
 
 앱생성시 발급된 네이티브 앱키를 kakao_app_key이란 이름으로 정의하고, AndroidManifest.xml에서 앱키를 등록합니다.
 
