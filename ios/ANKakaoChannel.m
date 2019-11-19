@@ -15,7 +15,7 @@
 {
     return dispatch_get_main_queue();
 }
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE(ANKakaoChannel)
 
 RCT_EXPORT_METHOD(addFriend: (NSString *) friendId
                   resolver: (RCTPromiseResolveBlock)resolve
