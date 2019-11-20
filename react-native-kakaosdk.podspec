@@ -19,7 +19,8 @@ Pod::Spec.new do |s|
   s.source_files  = "ios/*.{h,m}"
 
   s.dependency "React"
-  s.dependency "KakaoOpenSDK"
+  s.vendored_frameworks = 'KakaoCommon.framework', 'KakaoMessageTemplate.framework'
+
 end
 
   
