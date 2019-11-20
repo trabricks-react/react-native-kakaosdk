@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE43E41C2382954D007AC271 /* ANKakaoChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE43E41B2382954D007AC271 /* ANKakaoChannel.m */; };
-		BA1009B9236DF1F100B3EB23 /* ANKakaoLink.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1009B8236DF1F100B3EB23 /* ANKakaoLink.m */; };
-		BA363C3021CE1706002F486A /* ANKakaoLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA363C2F21CE1706002F486A /* ANKakaoLogin.m */; };
+		BA67EA702384E8060094C010 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA67EA6E2384E8060094C010 /* KakaoCommon.framework */; };
+		BA67EA712384E8060094C010 /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA67EA6F2384E8060094C010 /* KakaoMessageTemplate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,12 +25,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNCcsKakaosdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRNCcsKakaosdk.a; path = libRNCKakaoSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE43E41A2382954D007AC271 /* ANKakaoChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKakaoChannel.h; sourceTree = "<group>"; };
-		AE43E41B2382954D007AC271 /* ANKakaoChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKakaoChannel.m; sourceTree = "<group>"; };
-		BA1009B7236DF1F100B3EB23 /* ANKakaoLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANKakaoLink.h; sourceTree = "<group>"; };
-		BA1009B8236DF1F100B3EB23 /* ANKakaoLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANKakaoLink.m; sourceTree = "<group>"; };
-		BA363C2E21CE1706002F486A /* ANKakaoLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANKakaoLogin.h; sourceTree = "<group>"; };
-		BA363C2F21CE1706002F486A /* ANKakaoLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANKakaoLogin.m; sourceTree = "<group>"; };
+		BA67EA6E2384E8060094C010 /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoCommon.framework; path = ../KakaoCommon.framework; sourceTree = "<group>"; };
+		BA67EA6F2384E8060094C010 /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoMessageTemplate.framework; path = ../KakaoMessageTemplate.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA67EA712384E8060094C010 /* KakaoMessageTemplate.framework in Frameworks */,
+				BA67EA702384E8060094C010 /* KakaoCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +53,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				AE43E41A2382954D007AC271 /* ANKakaoChannel.h */,
-				AE43E41B2382954D007AC271 /* ANKakaoChannel.m */,
-				BA1009B7236DF1F100B3EB23 /* ANKakaoLink.h */,
-				BA1009B8236DF1F100B3EB23 /* ANKakaoLink.m */,
-				BA363C2E21CE1706002F486A /* ANKakaoLogin.h */,
-				BA363C2F21CE1706002F486A /* ANKakaoLogin.m */,
+				BA67EA6E2384E8060094C010 /* KakaoCommon.framework */,
+				BA67EA6F2384E8060094C010 /* KakaoMessageTemplate.framework */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,9 +116,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1009B9236DF1F100B3EB23 /* ANKakaoLink.m in Sources */,
-				AE43E41C2382954D007AC271 /* ANKakaoChannel.m in Sources */,
-				BA363C3021CE1706002F486A /* ANKakaoLogin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
