@@ -15,23 +15,6 @@
 - 카카오스토리
 - [`카카오톡 채널`]()
 
-## Getting started
-
-### Mostly automatic installation (RN >= 0.60)
-
-```
-$ npm install @actbase/react-native-kakaosdk --save
-$ cd ios && pod install && cd ..
-```
-
-### Mostly automatic installation (RN <= 0.59)
-
-```
-$ npm install @actbase/react-native-kakaosdk --save
-$ react-native link @actbase/react-native-kakaosdk
-$ cd ios && pod install && cd ..
-```
-
 ## 기본설정하기
 
 ### iOS 설정
