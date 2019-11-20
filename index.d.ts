@@ -1,97 +1,122 @@
-declare module 'actbase-native-kakaosdk' {
-    export type LinkObject = {
-        webURL?: string;
-        mobileWebURL?: string;
-        androidExecutionParams?: string;
-        iosExecutionParams?: string;
-    }
+import { NativeSyntheticEvent } from "react-native";
+declare module "actbase-native-kakaosdk" {
+  export interface LinkObject {
+    webURL?: string;
+    mobileWebURL?: string;
+    androidExecutionParams?: string;
+    iosExecutionParams?: string;
+  }
 
-    export type SocialObject = {
-        likeCount?: number;
-        commentCount?: number;
-        sharedCount?: number;
-        viewCount?: number;
-        subscriberCount?: number;
-    }
+  export interface SocialObject {
+    likeCount?: number;
+    commentCount?: number;
+    sharedCount?: number;
+    viewCount?: number;
+    subscriberCount?: number;
+  }
 
-    export type CommerceDetailObject = {
-        regularPrice: number;
-        discountPrice?: number;
-        discountRate?: number;
-        fixedDiscountPrice?: number;
-    }
+  export interface CommerceDetailObject {
+    regularPrice: number;
+    discountPrice?: number;
+    discountRate?: number;
+    fixedDiscountPrice?: number;
+  }
 
-    export type ButtonObject = {
-        title: string;
-        webURL?: string;
-        mobileWebURL?: string;
-        androidExecutionParams?: string;
-        iosExecutionParams?: string;
-    }
+  export interface ButtonObject {
+    title: string;
+    webURL?: string;
+    mobileWebURL?: string;
+    androidExecutionParams?: string;
+    iosExecutionParams?: string;
+  }
 
-    export type ContentObject = {
-        title: string;
-        link: LinkObject;
-        imageURL: string;
-        desc?: string;
-        imageWidth?: number;
-        imageHeight?: number;
-    }
+  export interface ContentObject {
+    title: string;
+    link: LinkObject;
+    imageURL: string;
+    desc?: string;
+    imageWidth?: number;
+    imageHeight?: number;
+  }
 
-    export type FeedObject = {
-        content: ContentObject;
-        social?: SocialObject;
-        buttons?: ButtonObject[];
-    }
+  export interface SendFeedParams {
+    content: ContentObject;
+    social?: SocialObject;
+    buttons?: ButtonObject[];
+  }
 
-    export type ListObject = {
-        headerTitle: string;
-        headerLink: LinkObject;
-        contents?: ContentObject[];
-        buttons?: ButtonObject[];
-    }
+  export interface SendListParams {
+    headerTitle: string;
+    headerLink: LinkObject;
+    contents?: ContentObject[];
+    buttons?: ButtonObject[];
+  }
 
-    export type LocationObject = {
-        content: ContentObject;
-        address: string;
-        addressTitle?: string;
-        buttons?: ButtonObject[];
-    }
+  export interface SendLocationParams {
+    content: ContentObject;
+    address: string;
+    addressTitle?: string;
+    buttons?: ButtonObject[];
+  }
 
-    export type CommerceObject = {
-        content: ContentObject;
-        commerce: CommerceDetailObject;
-        buttons?: ButtonObject[];
-    }
+  export interface SendCommerceParams {
+    content: ContentObject;
+    commerce: CommerceDetailObject;
+    buttons?: ButtonObject[];
+  }
 
-    export type TextObject = {
-        text: string;
-        link: LinkObject;
-        buttonTitle?: string;
-        buttons?: ButtonObject[];
-    }
+  export interface SendTextParams {
+    text: string;
+    link: LinkObject;
+    buttonTitle?: string;
+    buttons?: ButtonObject[];
+  }
 
-    export class ANKakaoLink {
-        sendFeed(data: FeedObject): Promise<any>;
+  export interface AccessTokenType {
+    accessToken: string;
+    remainingExpireTime: number;
+    scopes: string[];
+  }
 
-        sendList(data: ListObject): Promise<any>;
+  export interface ANKakaoLinkResponseType {
+    key: string;
+    value: string;
+  }
 
-        sendLocation(data: LocationObject): Promise<any>;
+  export interface ANKakaoLink {
+    sendFeed: (data: SendFeedParams) => Promise<ANKakaoLinkResponseType>;
 
-        sendCommerce(data: CommerceObject): Promise<any>;
+    sendList: (data: SendListParams) => Promise<ANKakaoLinkResponseType>;
 
-        sendText(data: TextObject): Promise<any>;
+    sendLocation: (
+      data: SendLocationParams
+    ) => Promise<ANKakaoLinkResponseType>;
 
-        sendURL(data: string): Promise<any>;
-    }
+    sendCommerce: (
+      data: SendCommerceParams
+    ) => Promise<ANKakaoLinkResponseType>;
 
-    export class ANKakaoLogin {
-    }
+    sendText: (data: SendTextParams) => Promise<ANKakaoLinkResponseType>;
 
-    export class KakaoSDK {
-        link: ANKakaoLink;
-        login: ANKakaoLogin;
-    }
+    sendURL: (url: string) => Promise<ANKakaoLinkResponseType>;
+  }
 
-    export default KakaoSDK;
+  export interface ANKakaoLogin {
+    getAccessToken: () => Promise<null | AccessTokenType>;
+    login: () => Promise<null | AccessTokenType>;
+    logout: () => Promise<"SUCCESS">;
+  }
+
+  export interface ANKakaoChannel {
+    addFriend: (id: string) => Promise<"SUCCESS">;
+    chat: (id: string) => Promise<"SUCCESS">;
+  }
+
+  export interface KakaoSDK {
+    link: ANKakaoLink;
+    login: ANKakaoLogin;
+    channel: ANKakaoChannel;
+  }
+
+  export default KakaoSDK;
 }

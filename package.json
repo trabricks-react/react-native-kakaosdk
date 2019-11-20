@@ -1,7 +1,6 @@
-
 {
   "name": "actbase-native-kakaosdk",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -15,7 +14,11 @@
     "카카오로그인",
     "kakaolink",
     "카카오링크",
-    "kakao link"
+    "kakao link",
+    "카카오톡 채널",
+    "kakao channel",
+    "플러스친구",
+    "plusfriend"
   ],
   "license": "MIT",
   "peerDependencies": {
