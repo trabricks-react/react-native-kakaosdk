@@ -20,15 +20,15 @@
 ### Mostly automatic installation (RN >= 0.60)
 
 ```
-$ npm install actbase-native-kakaosdk --save
+$ npm install @actbase/react-native-kakaosdk --save
 $ cd ios && pod install && cd ..
 ```
 
 ### Mostly automatic installation (RN <= 0.59)
 
 ```
-$ npm install actbase-native-kakaosdk --save
-$ react-native link actbase-native-kakaosdk
+$ npm install @actbase/react-native-kakaosdk --save
+$ react-native link @actbase/react-native-kakaosdk
 $ cd ios && pod install && cd ..
 ```
 
@@ -165,8 +165,8 @@ Kakao SDK에포함된 kakao-open-android-sdk-sample에서 제공되는 SampleLog
 
 자세히 보고 싶은 메시지를 클릭하세요.
 
-[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_feed.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#피드-템플릿-보내기)
-[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_list.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#리스트-템플릿-보내기)
-[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_commerce.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#커머스-템플릿-보내기)
-[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_location.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#위치-템플릿-보내기)
-[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_scrap.png">](https://github.com/actbase/actbase-native-kakaosdk/blob/master/docs/Link.md#스크랩-템플릿-보내기)
+[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_feed.png">](https://github.com/trabricks/react-native-kakaosdk/blob/master/docs/Link.md#피드-템플릿-보내기)
+[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_list.png">](https://github.com/trabricks/react-native-kakaosdk/blob/master/docs/Link.md#리스트-템플릿-보내기)
+[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_commerce.png">](https://github.com/trabricks/react-native-kakaosdk/blob/master/docs/Link.md#커머스-템플릿-보내기)
+[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_location.png">](https://github.com/trabricks/react-native-kakaosdk/blob/master/docs/Link.md#위치-템플릿-보내기)
+[<img width="150" src="https://developers.kakao.com/assets/images/dashboard/default_scrap.png">](https://github.com/trabricks/react-native-kakaosdk/blob/master/docs/Link.md#스크랩-템플릿-보내기)
