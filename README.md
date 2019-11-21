@@ -13,7 +13,7 @@
 - [`카카오링크`](https://github.com/actbase/actbase-native-kakaosdk/blob/master/README.md#카카오링크)
 - 카카오톡
 - 카카오스토리
-- [`카카오톡 채널`]()
+- [`카카오톡 채널`](https://github.com/trabricks/react-native-kakao-channel/blob/master/README.md)
 
 ## 기본설정하기
 
