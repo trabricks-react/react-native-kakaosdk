@@ -24,7 +24,6 @@
   "peerDependencies": {
     "react-native": "*"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "author": {
     "name": "Trabricks LLC",
     "email": "project@trabricks.io",
