@@ -1,6 +1,6 @@
 import { NativeModules } from "react-native";
 
-const { ARNKakaoLogin, ARNKakaoLink, ARNKakaoChARNnel } = NativeModules;
+const { ARNKakaoLogin, ARNKakaoLink, ARNKakaoChannel } = NativeModules;
 
 export const link = {
   sendFeed: object => {
@@ -37,10 +37,10 @@ export const login = {
 
 export const channel = {
   addFriend: id => {
-    ARNKakaoChARNnel.addFriend(id);
+    ARNKakaoChannel.addFriend(id);
   },
   chat: id => {
-    ARNKakaoChARNnel.chat(id);
+    ARNKakaoChannel.chat(id);
   }
 };
 
