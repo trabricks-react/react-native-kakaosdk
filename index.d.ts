@@ -1,5 +1,5 @@
-import { NativeSyntheticEvent } from "react-native";
 declare module "@actbase/react-native-kakaosdk" {
+  import { NativeSyntheticEvent } from "react-native";
   export interface LinkObject {
     webURL?: string;
     mobileWebURL?: string;
