@@ -78,44 +78,44 @@ declare module "actbase-native-kakaosdk" {
     scopes: string[];
   }
 
-  export interface ANKakaoLinkResponseType {
+  export interface ARNKakaoLinkResponseType {
     key: string;
     value: string;
   }
 
-  export interface ANKakaoLink {
-    sendFeed: (data: SendFeedParams) => Promise<ANKakaoLinkResponseType>;
+  export interface ARNKakaoLink {
+    sendFeed: (data: SendFeedParams) => Promise<ARNKakaoLinkResponseType>;
 
-    sendList: (data: SendListParams) => Promise<ANKakaoLinkResponseType>;
+    sendList: (data: SendListParams) => Promise<ARNKakaoLinkResponseType>;
 
     sendLocation: (
       data: SendLocationParams
-    ) => Promise<ANKakaoLinkResponseType>;
+    ) => Promise<ARNKakaoLinkResponseType>;
 
     sendCommerce: (
       data: SendCommerceParams
-    ) => Promise<ANKakaoLinkResponseType>;
+    ) => Promise<ARNKakaoLinkResponseType>;
 
-    sendText: (data: SendTextParams) => Promise<ANKakaoLinkResponseType>;
+    sendText: (data: SendTextParams) => Promise<ARNKakaoLinkResponseType>;
 
-    sendURL: (url: string) => Promise<ANKakaoLinkResponseType>;
+    sendURL: (url: string) => Promise<ARNKakaoLinkResponseType>;
   }
 
-  export interface ANKakaoLogin {
+  export interface ARNKakaoLogin {
     getAccessToken: () => Promise<null | AccessTokenType>;
     login: () => Promise<null | AccessTokenType>;
     logout: () => Promise<"SUCCESS">;
   }
 
-  export interface ANKakaoChannel {
+  export interface ARNKakaoChannel {
     addFriend: (id: string) => Promise<"SUCCESS">;
     chat: (id: string) => Promise<"SUCCESS">;
   }
 
   export interface KakaoSDK {
-    link: ANKakaoLink;
-    login: ANKakaoLogin;
-    channel: ANKakaoChannel;
+    link: ARNKakaoLink;
+    login: ARNKakaoLogin;
+    channel: ARNKakaoChannel;
   }
 
   export default KakaoSDK;
