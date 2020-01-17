@@ -170,8 +170,8 @@ declare module "@actbase/react-native-kakaosdk" {
   }
 
   export interface KakaoSDK {
-    link: ARNKakaoLink;
-    login: ARNKakaoLogin;
+    Link: ARNKakaoLink;
+    Login: ARNKakaoLogin;
     Channel: ARNKakaoChannel;
     Navi: ARNKakaoNavi;
   }
