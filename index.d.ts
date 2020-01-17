@@ -1,5 +1,4 @@
 declare module "@actbase/react-native-kakaosdk" {
-  import { NativeSyntheticEvent } from "react-native";
   export interface LinkObject {
     webURL?: string;
     mobileWebURL?: string;
@@ -173,8 +172,8 @@ declare module "@actbase/react-native-kakaosdk" {
   export interface KakaoSDK {
     link: ARNKakaoLink;
     login: ARNKakaoLogin;
-    channel: ARNKakaoChannel;
-    navi: ARNKakaoNavi;
+    Channel: ARNKakaoChannel;
+    Navi: ARNKakaoNavi;
   }
 
   export default KakaoSDK;
