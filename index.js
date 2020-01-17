@@ -47,5 +47,5 @@ export const channel = {
 export default {
   link,
   login,
-  chARNnel
+  channel
 };
