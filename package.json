@@ -1,6 +1,6 @@
 {
   "name": "@actbase/react-native-kakaosdk",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -24,6 +24,7 @@
   "peerDependencies": {
     "react-native": "*"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "author": {
     "name": "Trabricks LLC",
     "email": "project@trabricks.io",
