@@ -9,8 +9,8 @@
 
 ## 기능
 
-- [`카카오 사용자관리`]()
-- [`카카오링크`](https://github.com/trabricks/react-native-kakao-login/blob/master/README.md)
+- [`카카오 사용자관리`](https://github.com/trabricks/react-native-kakao-login/blob/master/README.md)
+- [`카카오링크`](https://github.com/trabricks/react-native-kakao-link/blob/master/README.md)
 - 카카오톡
 - 카카오스토리
 - [`카카오톡 채널`](https://github.com/trabricks/react-native-kakao-channel/#readme)
