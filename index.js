@@ -4,43 +4,43 @@ const { ARNKakaoLogin, ARNKakaoLink, ARNKakaoChannel, ARNKakaoNavi } = NativeMod
 
 export const link = {
   sendFeed: object => {
-    ARNKakaoLink.sendFeed(object);
+    return ARNKakaoLink.sendFeed(object);
   },
   sendList: object => {
-    ARNKakaoLink.sendList(object);
+    return ARNKakaoLink.sendList(object);
   },
   sendLocation: object => {
-    ARNKakaoLink.sendLocation(object);
+    return ARNKakaoLink.sendLocation(object);
   },
   sendCommerce: object => {
-    ARNKakaoLink.sendCommerce(object);
+    return ARNKakaoLink.sendCommerce(object);
   },
   sendText: object => {
-    ARNKakaoLink.sendText(object);
+    return ARNKakaoLink.sendText(object);
   },
   sendURL: object => {
-    ARNKakaoLink.sendURL(object);
+    return ARNKakaoLink.sendURL(object);
   }
 };
 
 export const login = {
   getAccessToken: () => {
-    ARNKakaoLogin.getAccessToken();
+    return ARNKakaoLogin.getAccessToken();
   },
   login: () => {
-    ARNKakaoLogin.login();
+    return ARNKakaoLogin.login();
   },
   logout: () => {
-    ARNKakaoLogin.logout();
+    return ARNKakaoLogin.logout();
   }
 };
 
 export const channel = {
   addFriend: id => {
-    ARNKakaoChannel.addFriend(id);
+    return ARNKakaoChannel.addFriend(id);
   },
   chat: id => {
-    ARNKakaoChannel.chat(id);
+    return ARNKakaoChannel.chat(id);
   }
 };
 
@@ -53,7 +53,7 @@ export const navi = {
     } else if (viaList.length > 3) {
       console.error("viaList must be <=3");
     } else {
-      ARNKakaoNavi.share(location, options, viaList);
+      return ARNKakaoNavi.share(location, options, viaList);
     }
   },
   navigate: (location, options = {}, viaList = []) => {
@@ -64,7 +64,7 @@ export const navi = {
     } else if (viaList.length > 3) {
       console.error("viaList must be <=3");
     } else {
-      ARNKakaoNavi.navigate(location, options, viaList);
+      return ARNKakaoNavi.navigate(location, options, viaList);
     }
   }
 };
