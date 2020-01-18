@@ -8,6 +8,15 @@ module.exports = {
     }
     return NativeModules.ARNKakaoLogin;
   }
+
+  get Link() {
+    if (!NativeModules.ARNKakaoLink) {
+      console.warn("Install to Kakao Link - $ npm i @actbase/react-native-kakao-link");
+      return null;
+    }
+    return NativeModules.ARNKakaoLink;
+  }
+
 };
 
 
