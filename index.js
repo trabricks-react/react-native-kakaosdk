@@ -1,51 +1,13 @@
-import { NativeModules } from "react-native";
+import { NativeModules } from 'react-native';
 
-const { ARNKakaoLogin, ARNKakaoLink, ARNKakaoChARNnel } = NativeModules;
-
-export const link = {
-  sendFeed: object => {
-    ARNKakaoLink.sendFeed(object);
-  },
-  sendList: object => {
-    ARNKakaoLink.sendList(object);
-  },
-  sendLocation: object => {
-    ARNKakaoLink.sendLocation(object);
-  },
-  sendCommerce: object => {
-    ARNKakaoLink.sendCommerce(object);
-  },
-  sendText: object => {
-    ARNKakaoLink.sendText(object);
-  },
-  sendURL: object => {
-    ARNKakaoLink.sendURL(object);
+module.exports = {
+  get Login() {
+    if (!NativeModules.ARNKakaoLogin) {
+      console.warn("Install to Kakao Login - $ npm i @actbase/react-native-kakao-login");
+      return null;
+    }
+    return NativeModules.ARNKakaoLogin;
   }
 };
 
-export const login = {
-  getAccessToken: () => {
-    ARNKakaoLogin.getAccessToken();
-  },
-  login: () => {
-    ARNKakaoLogin.login();
-  },
-  logout: () => {
-    ARNKakaoLogin.logout();
-  }
-};
 
-export const channel = {
-  addFriend: id => {
-    ARNKakaoChARNnel.addFriend(id);
-  },
-  chat: id => {
-    ARNKakaoChARNnel.chat(id);
-  }
-};
-
-export default {
-  link,
-  login,
-  chARNnel
-};
