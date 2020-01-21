@@ -1,11 +1,11 @@
 # KakaoSDK for React Native
 
 ![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
-[![npm](https://img.shields.io/npm/v/actbase-native-kakaosdk.svg?style=flat-square)](https://www.npmjs.com/package/actbase-native-kakaosdk)
-[![npm](https://img.shields.io/npm/dm/actbase-native-kakaosdk.svg?style=flat-square&colorB=007ec6)](https://www.npmjs.com/package/actbase-native-kakaosdk)
-[![github issues](https://img.shields.io/github/issues/actbase/actbase-native-kakaosdk.svg?style=flat-square)](https://github.com/actbase/actbase-native-kakaosdk/issues)
-[![github closed issues](https://img.shields.io/github/issues-closed/actbase/actbase-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](https://github.com/actbase/actbase-native-kakaosdk/issues?q=is%3Aissue+is%3Aclosed)
-[![Issue Stats](https://img.shields.io/issuestats/i/github/actbase/actbase-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](http://github.com/actbase/actbase-native-kakaosdk/issues)
+[![npm](https://img.shields.io/npm/v/@actbase/react-native-kakaosdk.svg?style=flat-square)](https://www.npmjs.com/package/@actbase/react-native-kakaosdk)
+[![npm](https://img.shields.io/npm/dm/@actbase/react-native-kakaosdk.svg?style=flat-square&colorB=007ec6)](https://www.npmjs.com/package/@actbase/react-native-kakaosdk)
+[![github issues](https://img.shields.io/github/issues/trabricks/react-native-kakaosdk.svg?style=flat-square)](https://github.com/trabricks/react-native-kakaosdk/issues)
+[![github closed issues](https://img.shields.io/github/issues-closed/trabricks/react-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](https://github.com/trabricks/react-native-kakaosdk/issues?q=is%3Aissue+is%3Aclosed)
+[![Issue Stats](https://img.shields.io/issuestats/i/github/trabricks/react-native-kakaosdk.svg?style=flat-square&colorB=44cc11)](http://github.com/trabricks/react-native-kakaosdk/issues)
 
 ## 기능
 
@@ -14,6 +14,7 @@
 - 카카오톡
 - 카카오스토리
 - [`카카오톡 채널`](https://github.com/trabricks/react-native-kakao-channel/#readme)
+- [`카카오 내비`](https://github.com/trabricks/react-native-kakao-navi/#readme)
 
 ## 기본설정하기
 
