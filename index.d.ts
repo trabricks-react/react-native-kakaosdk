@@ -1,4 +1,4 @@
-declare module "@actbase/react-native-kakaosdk" {
+declare module '@actbase/react-native-kakaosdk' {
   export interface LinkObject {
     webURL?: string;
     mobileWebURL?: string;
@@ -73,6 +73,9 @@ declare module "@actbase/react-native-kakaosdk" {
 
   export interface AccessTokenType {
     accessToken: string;
+    refreshToken: string;
+    accessTokenExpiresAt: string;
+    refreshTokenExpiresAt: string;
     remainingExpireTime: number;
     scopes: string[];
   }
@@ -87,33 +90,53 @@ declare module "@actbase/react-native-kakaosdk" {
 
     sendList: (data: SendListParams) => Promise<ARNKakaoLinkResponseType>;
 
-    sendLocation: (
-      data: SendLocationParams
-    ) => Promise<ARNKakaoLinkResponseType>;
+    sendLocation: (data: SendLocationParams) => Promise<ARNKakaoLinkResponseType>;
 
-    sendCommerce: (
-      data: SendCommerceParams
-    ) => Promise<ARNKakaoLinkResponseType>;
+    sendCommerce: (data: SendCommerceParams) => Promise<ARNKakaoLinkResponseType>;
 
     sendText: (data: SendTextParams) => Promise<ARNKakaoLinkResponseType>;
 
     sendURL: (url: string) => Promise<ARNKakaoLinkResponseType>;
   }
 
+  export interface ProfileType {
+    ID: string;
+    hasSignedUp: boolean;
+    account: {
+      profileNeedsAgreement: boolean;
+      profile: {
+        nickname: string;
+        profileImageURL: string;
+        thumbnailImageURL: string;
+      };
+      emailNeedsAgreement: boolean;
+      isEmailVerified: boolean;
+      email: string;
+      ageRangeNeedsAgreement: boolean;
+      ageRange: string;
+      birthday: string;
+      genderNeedsAgreement: boolean;
+      gender: 'male' | 'female' | null;
+    };
+    properties: string;
+  }
+
   export interface ARNKakaoLogin {
     getAccessToken: () => Promise<null | AccessTokenType>;
     login: () => Promise<null | AccessTokenType>;
-    logout: () => Promise<"SUCCESS">;
+    logout: () => Promise<'SUCCESS'>;
+    getProfile: () => Promise<ProfileType>;
+    unlink: () => Promise<'SUCCESS'>;
   }
 
   export interface ARNKakaoChannel {
-    addFriend: (id: string) => Promise<"SUCCESS">;
-    chat: (id: string) => Promise<"SUCCESS">;
+    addFriend: (id: string) => Promise<'SUCCESS'>;
+    chat: (id: string) => Promise<'SUCCESS'>;
   }
 
   export enum CoordType {
     KATEC = 1,
-    WGS84 = 2
+    WGS84 = 2,
   }
 
   export enum RpOption {
@@ -123,7 +146,7 @@ declare module "@actbase/react-native-kakaosdk" {
     NoAuto = 4,
     Wide = 5,
     Highway = 6,
-    Normal = 8
+    Normal = 8,
   }
 
   export enum VehicleType {
@@ -133,7 +156,7 @@ declare module "@actbase/react-native-kakaosdk" {
     Fourth = 4,
     Fifth = 5,
     Sixth = 6,
-    TwoWheel = 7
+    TwoWheel = 7,
   }
 
   export interface ARNKakaoNaviLocation {
@@ -161,12 +184,12 @@ declare module "@actbase/react-native-kakaosdk" {
       location: ARNKakaoNaviLocation,
       options?: ARNKakaoNaviOptions,
       viaList?: ARNKakaoNaviViaList
-    ) => Promise<"SUCCESS">;
+    ) => Promise<'SUCCESS'>;
     navigate: (
       location: ARNKakaoNaviLocation,
       options?: ARNKakaoNaviOptions,
       viaList?: ARNKakaoNaviViaList
-    ) => Promise<"SUCCESS">;
+    ) => Promise<'SUCCESS'>;
   }
 
   export interface KakaoSDK {
@@ -175,6 +198,8 @@ declare module "@actbase/react-native-kakaosdk" {
     Channel: ARNKakaoChannel;
     Navi: ARNKakaoNavi;
   }
+
+  declare const KakaoSDK: KakaoSDK;
 
   export default KakaoSDK;
 }
